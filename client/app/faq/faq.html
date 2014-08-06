@@ -1,0 +1,43 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="faq">
+  <div class="container faq">
+    <h1>FAQ</h1>
+    <hr>
+    <ul>
+      <li>
+        <h4>No Rhythm?!?!</h4>
+        <p>No, this app does not dictate rhythm. Accuracy comes with the cost of slow speed and no ability to dictate rhythm. It might have been possible if I had 4 months, instead of 10 days, to develop this app.</p>
+      </li>
+      <li>
+        <h4>This app sucks. It doesn't do anything right.</h4>
+        <p>Here are some ways to improve its guess.</p>
+        <ul>
+          <li>Minimizing the background noise will reduce the unfortunate trill dance.</li>
+          <li>Keep it to reasonable range please! Do not pull out a tuba, or a piccolo, and expect it to work. (or a soprano or a bass, in that sense.) It will not recognize any notes higher than three octaves above the middle C.</li>
+          <li>If the guess skips over a lot of notes, try singing (or humming) slower. It works the best when each note is sung slower than 80bpm. (<a target="_blank" href="http://metronomeonline.com">Metronome</a>) There is no reason to sing faster or in rhythm anyways since it doesn't dictate rhythm.</li>
+          <li>The pitch recognition library is optimized for human voice. Singing or humming works the best with this app.</li>
+          <li>Also, please use the reference pitch and take care not to sing around quarter tones. It's your fault for hanging out there, not the poor program's fault trying to correct your tuning. This will also reduce the unfortunate trill dance.</li>
+        </ul>
+      </li>
+      <li>
+      	<h4>How do I edit?</h4>
+      	<p>The edit syntax consists of the note name and octave number. For example, middle C is C4, A 440 is A4, etc. It also takes accidentals, up to single sharp or a flat. I don't plan on supporting double sharps or double flats. Also, please make sure to separate each note with a comma.</p>
+      </li>
+      <li>
+      	<h4>No articulation? Also what is this thing that's playing back?</h4>
+      	<p>It's my very own <a target="_blank" href="https://en.wikipedia.org/wiki/Theremin">Theremin</a> that I bought from eBay, just for this project. (just kidding.) I'm using a built in oscillator to play back the program's guess, and it is in essence a computer built Theremin, hence all the wonderful glidings in between notes. I could have gotten piano samples to play back, but this honestly was not very high on my list in this project. Again, if I had more time to mess with small things like this, it might have happened, which would've solved the no articulation issue.</p>
+      </li>
+      <li>
+      	<h4>I still have questions.</h4>
+      	<p>Awesome! If you are familiar with github, why don't you submit an issue over <a target="_blank" href="https://github.com/roaringsheep/dictateMe/issues?state=open">here</a>? If you are not, then send them over <a target="_blank" href="http://twitter.com/songminseonk">here</a>. </p>
+      </li>
+      </ul>
+  </div>
+  <!-- container -->
+    <footer class="footer">
+      <p><a href="https://twitter.com/songminseonk">@songminseonk</a> |
+        <a href="https://github.com/roaringsheep/dictateMe/issues?state=open">Issues</a>
+      </p>
+  </footer>
+</div>
+<!-- faq -->

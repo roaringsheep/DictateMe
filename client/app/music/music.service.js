@@ -121,6 +121,9 @@ angular.module('dictateMeApp')
           var notez = string.split(',');
           notez.forEach(function (note) {
             note = note.trim();
+            var fst = note[0].toUpperCase();
+            note = note.slice(1);
+            note = fst + note;
             $rootScope.notes.push(music.parseName(note));
           });
           music.initMusic();

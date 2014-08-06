@@ -121,7 +121,6 @@ angular.module('dictateMeApp')
         str = str.slice(1);
         str = fst + str;
         newArr.push($rootScope.convert.noteToFreq(str));
-        console.log(str);
       });
       play = $interval(function () {
         if (index < newArr.length) {

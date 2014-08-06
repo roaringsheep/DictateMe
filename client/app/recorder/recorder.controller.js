@@ -67,6 +67,7 @@ angular.module('dictateMeApp')
 
       $rootScope.recorder && $rootScope.recorder.record();
       $scope.recording = true;
+      $rootScope.everythingOK = false;
       $rootScope.recording = $scope.recording;
       setup.__log('Listening...');
 
@@ -106,6 +107,7 @@ angular.module('dictateMeApp')
     $scope.stop = function () {
       $rootScope.recorder && $rootScope.recorder.stop();
       $scope.recording = false;
+      $rootScope.everythingOK = true;
       $rootScope.recording = $scope.recording;
       setup.__log('Stopped listening.');
       $rootScope.recorder.clear();

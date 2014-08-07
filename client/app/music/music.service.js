@@ -36,13 +36,31 @@ angular.module('dictateMeApp')
     $rootScope.stave;
     $rootScope.voice;
     $rootScope.formatter;
+    
+    if (window.innerWidth < 450) {
+      $rootScope.canvasWidth = 300
+    } else if (window.innerWidth < 600) {
+      $rootScope.canvasWidth = 400;
+    } else if (window.innerWidth < 800) {
+      $rootScope.canvasWidth = 550;
+    } else if (window.innerWidth < 1000) {
+      $rootScope.canvasWidth = 650;
+    } else if (window.innerWidth < 1200) {
+      $rootScope.canvasWidth = 950;
+    } else {
+      $rootScope.canvasWidth = 850;
+    }
+
+    $rootScope.$watch('canvasWidth', function (newVal, oldVal) {
+      $rootScope.canvasWidth = newVal;
+    })
 
     var music = {
       clefOpt: clefOpt,
       initMusic: function () {
         $rootScope.canvas = {
           element: angular.element("#musicCanvas")[0],
-          width: 700
+          width: $rootScope.canvasWidth
         };
 
         $rootScope.renderer = new Vex.Flow.Renderer($rootScope.canvas.element, Vex.Flow.Renderer.Backends.CANVAS);
@@ -68,7 +86,7 @@ angular.module('dictateMeApp')
         if (name.length == 3) {
           currAcc = name[1];
           $rootScope.acc[name[0]] = currAcc;
-          if (prevAcc == 'n') {
+          if (prevAcc == 'n' || prevAcc == currAcc) {
             return new Vex.Flow.StaveNote({
               clef: $rootScope.clefSlct.value,
               keys: [name.splice(2, 0, '/')],

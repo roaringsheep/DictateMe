@@ -113,7 +113,7 @@ angular.module('dictateMeApp')
       $rootScope.prettyNotes = [];
       prettify($rootScope.notes);
       $rootScope.everythingOK = false;
-      $rootScope.playBack.type = 3;
+      $rootScope.playBack.type = 2;
       $rootScope.playBack.frequency.value = 1;
       $rootScope.playBack.connect($rootScope.audio_context.destination);
       var newArr = [];
@@ -129,10 +129,10 @@ angular.module('dictateMeApp')
         if (index < newArr.length) {
           $rootScope.playBack.frequency.value = newArr[index];
           index++;
-            $rootScope.playBack.disconnect($rootScope.audio_context.destination);
-            $timeout(function () {
-              $rootScope.playBack.connect($rootScope.audio_context.destination);
-            }, 150);
+            // $rootScope.playBack.disconnect($rootScope.audio_context.destination);
+            // $timeout(function () {
+            //   $rootScope.playBack.connect($rootScope.audio_context.destination);
+            // }, 150);
         } else {
           $rootScope.playBack.disconnect($rootScope.audio_context.destination);
           $interval.cancel(play);

@@ -22,16 +22,14 @@
                 <button ng-hide="!recording" id="recorderStop" ng-click="stop()" class="btn btn-danger">Stop</button>
               </div>
               <div class="form-group" ng-controller="EngravemusicCtrl">
-                <input ng-show="editOn" ng-model="tones" id="editInput" ng-disabled="!everythingOK" type="text" class="form-control">
-                <div class="btn-group">
-                  <button ng-disabled="!everythingOK" id="musicPlayBack" ng-click="playNotes()" class="btn btn-primary">Play Back</button>
-                  <button ng-disabled="!everythingOK" id="musicEdit" ng-click="edit()" class="btn btn-warning">Edit</button>
-                </div>
+                <button ng-disabled="!everythingOK" id="musicPlayBack" ng-click="playNotes()" class="btn btn-primary">Play Back</button>
+                <input ng-show="editOn" ng-model="tones" id="editInput" placeholder="ex) C#4,D#4,C#4,Gb4,F4" ng-disabled="!everythingOK" type="text" class="form-control">
+                <button ng-disabled="!everythingOK" id="musicEdit" ng-click="edit()" class="btn btn-warning">Edit</button>
               </div>
             </div>
           </form>
           <div ng-controller="EngravemusicCtrl as music" id="advanced">
-            <form class="form-inline center-block">
+            <form class="form-inline center-block ">
               <div class="form-group form-group-sm">
                 <label class="control-label">Clef</label>
                 <select class="form-control" ng-model="clefSlct" ng-disabled="!everythingOK" ng-options="opt.name for opt in clefOpt track by opt.value" class="btn btn-default"></select>
@@ -58,7 +56,7 @@
   <footer class="footer">
     <div class="container">
       <p>
-        <span class="glyphicon glyphicon-copyright-mark"></span> 2014 Minseon Song | <a href="https://twitter.com/songminseonk">@songminseonk</a> |
+        <span class="glyphicon glyphicon-copyright-mark"></span>2014 Minseon Song | <a href="https://twitter.com/songminseonk">@songminseonk</a> |
         <a href="https://github.com/roaringsheep/dictateMe/issues?state=open">Issues</a>
       </p>
     </div>

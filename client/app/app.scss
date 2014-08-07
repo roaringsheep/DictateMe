@@ -27,7 +27,7 @@ $icon-font-path:"/bower_components/bootstrap-sass-official/vendor/assets/fonts/b
 }
 form {
   margin-bottom: 10px;
-  #recorderStart {
+  button {
     margin-right: 5px;
   }
   input {
@@ -41,6 +41,27 @@ form {
     margin-right: 3px;
   }
 }
+
+@media (max-width: 770px) {
+	form {
+		#recorderStart {
+			float: left;
+			margin-bottom: 10px;
+		}
+		button {
+			margin-bottom: 10px;
+		}
+		select {
+			margin-bottom: 10px;
+			max-width: 100px; 
+		}
+		input {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'faq/faq.scss';

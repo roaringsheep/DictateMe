@@ -48,13 +48,13 @@ angular.module('dictateMeApp')
       }
 
       $rootScope.playBack = $rootScope.audio_context.createOscillator();
-      $rootScope.playBack.noteOn(0);
+      $rootScope.playBack.start(0);
       if (!$rootScope.playBack) {
         __log('Playback setup failed.')
       }
 
       $rootScope.refPitch = $rootScope.audio_context.createOscillator();
-      $rootScope.refPitch.noteOn(0);
+      $rootScope.refPitch.start(0);
       if (!$rootScope.refPitch) {
         __log('Reference Pitch initialization failed.')
       }

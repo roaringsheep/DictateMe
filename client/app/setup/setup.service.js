@@ -11,13 +11,34 @@ angular.module('dictateMeApp')
     $rootScope.audio_context;
     $rootScope.messy;
 
+    var whaChaDoin = function () {
+      __log("Not sure what to do? Click 'Start' for me to start listening, 'Edit' to enter or modify notes manually.");
+    };
+
+    var more = function () {
+      __log("Click 'Play Back' to play the notes on the screen. You can also change clef or have me play a reference tone for you.");
+    }
+
+     var wait = function () {
+      $timeout(function () {
+        if (!$rootScope.messy && $rootScope.everythingOK) {
+          whaChaDoin();
+          $timeout(function () {
+            if (!$rootScope.messy && $rootScope.everythingOK) {
+              more();
+            }
+          }, 10000);
+        }
+      }, 7000);
+    };
+
     var __log = function (e, data) {
       var log = angular.element('#log');
-      var logTxt = angular.element('<p class="animate">' + e + ' ' + (data || '') +'</p>');
+      var logTxt = angular.element('<p class="animate">' + e + ' ' + (data || '') + '</p>');
       log.append(logTxt);
-      $timeout(function(){
+      $timeout(function () {
         logTxt.removeClass('animate');
-      },3000);
+      }, 3000);
       log[0].scrollTop = log[0].scrollHeight;
     };
 
@@ -64,7 +85,9 @@ angular.module('dictateMeApp')
         $rootScope.playBack && $rootScope.refPitch) {
         __log('Everything looks good!');
         $scope.everythingOK = true;
+        $rootScope.everythingOK = true;
         $scope.$apply();
+        wait();
       } else {
         __log('Uh oh. Something went wrong.');
       }

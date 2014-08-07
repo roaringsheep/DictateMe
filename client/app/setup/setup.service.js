@@ -9,56 +9,49 @@ angular.module('dictateMeApp')
     $rootScope.refPitch;
     $rootScope.inputs;
     $rootScope.audio_context;
+    $rootScope.messy;
 
     var __log = function (e, data) {
+      var log = angular.element('#log')[0];
       log.innerHTML += '<br>' + e + " " + (data || '');
       log.scrollTop = log.scrollHeight;
     };
 
     var startUserMedia = function ($scope, stream) {
       cleanUp();
+      $rootScope.messy = false;
       $rootScope.inputs = $rootScope.audio_context.createMediaStreamSource(stream);
       window.source = $rootScope.inputs;
       if ($rootScope.inputs) {
-        __log('input found...');
+        __log('Setting up some stuff for you...');
       } else {
         __log('Media stream failed to initialize.');
       }
 
       $rootScope.recorder = new Recorder($rootScope.inputs);
-      if ($rootScope.recorder) {
-        __log('mic ready...');
-      } else {
+      if (!$rootScope.recorder) {
         __log('Recorder failed to initialize.');
       }
 
       $rootScope.pitchAnalyzer = new PitchAnalyzer(44100);
-      if ($rootScope.pitchAnalyzer) {
-        __log('fetching analyzer...');
-      } else {
+      if (!$rootScope.pitchAnalyzer) {
         __log('PitchAnalyzer failed to initialize.')
       }
 
       $rootScope.convert = new NoteConversion();
-      if ($rootScope.convert) {
-        __log('setting up converter...');
-      } else {
+      if (!$rootScope.convert) {
         __log('Note Converter failed to initialize.')
       }
 
       $rootScope.playBack = $rootScope.audio_context.createOscillator();
       $rootScope.playBack.noteOn(0);
-      if ($rootScope.playBack) {
-        __log('getting ready to play back...');
-      } else {
+      if (!$rootScope.playBack) {
         __log('Playback setup failed.')
       }
 
       $rootScope.refPitch = $rootScope.audio_context.createOscillator();
       $rootScope.refPitch.noteOn(0);
-      if ($rootScope.refPitch) {
-        __log('finding tuning forks...');
-      } else {
+      if (!$rootScope.refPitch) {
         __log('Reference Pitch initialization failed.')
       }
 

@@ -6,12 +6,15 @@
         <h2>Bot says...</h2>
         <div id='log'>
         </div>
+        <div id='testing'>
+
+        </div>
       </div>
       <div class="col-lg-9">
-        <div ng-controller="EngravemusicCtrl">
-          <canvas id="musicCanvas"></canvas>
-        </div>
         <center>
+          <div ng-controller="EngravemusicCtrl">
+            <canvas id="musicCanvas"></canvas>
+          </div>
           <form class="form-inline center-block">
             <div class="form-group form-group-sm">
               <div class="btn-group" ng-controller="RecorderCtrl as recorder">
@@ -19,25 +22,28 @@
                 <button ng-hide="!recording" id="recorderStop" ng-click="stop()" class="btn btn-danger">Stop</button>
               </div>
               <div class="form-group" ng-controller="EngravemusicCtrl">
-              <input ng-show="editOn" ng-model="tones" id="editInput" ng-disabled="!everythingOK" type="text" class="form-control">
-              <div class="btn-group">
-                <button ng-disabled="!everythingOK" id="musicPlayBack" ng-click="playNotes()" class="btn btn-primary">Play Back</button>
-                <button ng-disabled="!everythingOK" id="musicEdit" ng-click="edit()" class="btn btn-warning">Edit</button>
+                <input ng-show="editOn" ng-model="tones" id="editInput" ng-disabled="!everythingOK" type="text" class="form-control">
+                <div class="btn-group">
+                  <button ng-disabled="!everythingOK" id="musicPlayBack" ng-click="playNotes()" class="btn btn-primary">Play Back</button>
+                  <button ng-disabled="!everythingOK" id="musicEdit" ng-click="edit()" class="btn btn-warning">Edit</button>
+                </div>
               </div>
-              </div>
-              <div ng-controller="EngravemusicCtrl as music" class="form-group form-group-sm">
+            </div>
+          </form>
+          <div ng-controller="EngravemusicCtrl as music" id="advanced">
+            <form class="form-inline center-block">
+              <div class="form-group form-group-sm">
                 <label class="control-label">Clef</label>
                 <select class="form-control" ng-model="clefSlct" ng-disabled="!everythingOK" ng-options="opt.name for opt in clefOpt track by opt.value" class="btn btn-default"></select>
                 <button ng-disabled="!everythingOK" id="applyClef" class="btn btn-default" ng-click="clefApply()">Apply</button>
               </div>
-
-              <div ng-controller="EngravemusicCtrl as music" class="form-group form-group-sm">
+              <div class="form-group form-group-sm">
                 <label class="control-label">Tone</label>
                 <select class="form-control" ng-model="refToneSlct" ng-disabled="!everythingOK" ng-options="opt.name for opt in refTonesOpt track by opt.value" class="btn btn-default"></select>
                 <button ng-disabled="!everythingOK" id="refTonePlay" class="btn btn-default playRdy" ng-click="playRefTone()">Play</button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </center>
       </div>
     </div>
@@ -51,7 +57,8 @@
 
   <footer class="footer">
     <div class="container">
-      <p>2014 <span class="glyphicon glyphicon-copyright-mark"></span> Minseon Song | <a href="https://twitter.com/songminseonk">@songminseonk</a> |
+      <p>
+        <span class="glyphicon glyphicon-copyright-mark"></span> 2014 Minseon Song | <a href="https://twitter.com/songminseonk">@songminseonk</a> |
         <a href="https://github.com/roaringsheep/dictateMe/issues?state=open">Issues</a>
       </p>
     </div>

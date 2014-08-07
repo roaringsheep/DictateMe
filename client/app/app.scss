@@ -20,7 +20,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 }
 
 #log {
-	height: 150px;
+	height: 200px;
 	overflow-y: visible;
 	overflow-x: hidden;
 	font-size: 18px;
@@ -28,6 +28,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 #raw {
 	height: 400px;
+}
+
+form {
+	margin-bottom: 10px;
 }
 
 // Component styles are injected through grunt

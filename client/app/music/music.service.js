@@ -42,7 +42,7 @@ angular.module('dictateMeApp')
       initMusic: function () {
         $rootScope.canvas = {
           element: angular.element("#musicCanvas")[0],
-          width: 800
+          width: 700
         };
 
         $rootScope.renderer = new Vex.Flow.Renderer($rootScope.canvas.element, Vex.Flow.Renderer.Backends.CANVAS);

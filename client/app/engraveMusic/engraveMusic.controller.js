@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dictateMeApp')
-  .controller('EngravemusicCtrl', function ($rootScope, $scope, music, setup, $interval) {
+  .controller('EngravemusicCtrl', function ($rootScope, $scope, music, setup, $interval, $timeout) {
     $scope.clefOpt = music.clefOpt;
     $scope.clefSlct = $rootScope.clefSlct;
     $scope.recording = $rootScope.recording;
@@ -17,7 +17,6 @@ angular.module('dictateMeApp')
     // $rootScope.$watch('acc', function (newVal, oldVal) {
     //   $scope.acc = newVal;
     // })
-
 
     $scope.refTonesOpt = [{
       name: 'C',
@@ -62,6 +61,7 @@ angular.module('dictateMeApp')
       return (this.slice(0, idx) + s + this.slice(idx + Math.abs(rem)));
     };
     $scope.clefApply = function () {
+      $rootScope.messy = true;
       $rootScope.clefSlct = $scope.clefSlct;
       if ($rootScope.tones) {
         music.addNotes($rootScope.tones);
@@ -73,6 +73,9 @@ angular.module('dictateMeApp')
     $scope.refToneSlct = $scope.refTonesOpt[9];
 
     $scope.playRefTone = function () {
+      if (!$rootScope.messy) {
+        $rootScope.messy = true;
+      }
       var freq = $scope.refToneSlct.value;
       freq = parseFloat(freq);
       $rootScope.refPitch.frequency.value = freq;
@@ -126,15 +129,22 @@ angular.module('dictateMeApp')
         if (index < newArr.length) {
           $rootScope.playBack.frequency.value = newArr[index];
           index++;
+            $rootScope.playBack.disconnect($rootScope.audio_context.destination);
+            $timeout(function () {
+              $rootScope.playBack.connect($rootScope.audio_context.destination);
+            }, 150);
         } else {
           $rootScope.playBack.disconnect($rootScope.audio_context.destination);
           $interval.cancel(play);
           $rootScope.everythingOK = true;
         }
-      }, 800);
+      }, 1000);
     };
 
     $scope.edit = function () {
+      if (!$rootScope.messy) {
+        $rootScope.messy = true;
+      }
       var editView = angular.element('#editInput');
       var editBtn = angular.element('#musicEdit');
       if ($scope.editOn === false) {

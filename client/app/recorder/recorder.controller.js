@@ -44,6 +44,9 @@ angular.module('dictateMeApp')
     };
 
     $scope.start = function () {
+      if (!$rootScope.messy) {
+        $rootScope.messy = true;
+      }
       if ($rootScope.toneArr.length > 1) {
         tempArr = [];
         $rootScope.toneArr = [];
@@ -118,7 +121,7 @@ angular.module('dictateMeApp')
         setup.__log("I didn't find any recognizable tones!");
       } else {
         music.addNotes($rootScope.tones);
-        setup.__log("Not satisfied with the guess? Why don't you check out " + "<a href='/faq'>FAQ</a>" + " for ways to improve my guess?");
+        $scope.rUSrs();
       }
     };
 

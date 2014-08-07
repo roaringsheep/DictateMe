@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dictateMeApp')
-  .factory('setup', function ($rootScope) {
+  .factory('setup', function ($rootScope, $timeout) {
     $rootScope.recorder;
     $rootScope.pitchAnalyzer;
     $rootScope.convert;
@@ -12,9 +12,13 @@ angular.module('dictateMeApp')
     $rootScope.messy;
 
     var __log = function (e, data) {
-      var log = angular.element('#log')[0];
-      log.innerHTML += '<br>' + e + " " + (data || '');
-      log.scrollTop = log.scrollHeight;
+      var log = angular.element('#log');
+      var logTxt = angular.element('<p class="animate">' + e + ' ' + (data || '') +'</p>');
+      log.append(logTxt);
+      $timeout(function(){
+        logTxt.removeClass('animate');
+      },3000);
+      log[0].scrollTop = log[0].scrollHeight;
     };
 
     var startUserMedia = function ($scope, stream) {

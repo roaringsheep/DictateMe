@@ -54,7 +54,7 @@ angular.module('dictateMeApp')
     };
 
     $scope.more = function () {
-      setup.__log("Click 'Play Back' to play the notes on the screen. You can also change clef or have me play a reference tone for you by using the dropdown menu on the right of the Edit button. Click <a href='/faq'>here</a> for more instructions.");
+      setup.__log("Click 'Play Back' to play the notes on the screen. You can also change clef or have me play a reference tone for you.");
     }
 
     $scope.rUSrs = function () {

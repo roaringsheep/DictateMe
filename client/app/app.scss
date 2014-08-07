@@ -27,6 +27,9 @@ $icon-font-path:"/bower_components/bootstrap-sass-official/vendor/assets/fonts/b
 }
 form {
   margin-bottom: 10px;
+  #recorderStart {
+  	margin-right: 10px;
+  }
   button {
     margin-right: 5px;
   }
@@ -40,6 +43,23 @@ form {
   select {
     margin-right: 3px;
   }
+}
+
+#log {
+	.animate {
+		-webkit-animation: loganimation 3s;
+		animation: loganimation 3s;
+	}
+}
+
+@-webkit-keyframes loganimation {
+	from {color: red;}
+	to {color: #333;}
+}
+
+@keyframes loganimation {
+	from {color: red;}
+	to {color:#333;}
 }
 
 @media (max-width: 770px) {

@@ -1,6 +1,5 @@
-$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-$fa-font-path: "/bower_components/font-awesome/fonts";
-
+$icon-font-path:"/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+ $fa-font-path:"/bower_components/font-awesome/fonts";
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
 
@@ -9,31 +8,39 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  */
 
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
-
 .row {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
-
 #log {
-	height: 200px;
-	overflow-y: visible;
-	overflow-x: hidden;
-	font-size: 18px;
+  height: 200px;
+  overflow-y: visible;
+  overflow-x: hidden;
+  font-size: 16px;
 }
-
 #raw {
-	height: 400px;
+  height: 400px;
 }
-
 form {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
+  #recorderStart {
+    margin-right: 5px;
+  }
+  input {
+    margin-right: 3px;
+  }
+  label {
+    margin-left: 10px;
+    margin-right: 3px;
+  }
+  select {
+    margin-right: 3px;
+  }
 }
-
 // Component styles are injected through grunt
 // injector
 @import 'faq/faq.scss';

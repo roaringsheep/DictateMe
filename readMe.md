@@ -20,12 +20,18 @@ Dictate Me also provides reference pitches for people who like to sing in betwee
 ### How To Have Your Own Copy ###
 If you want your own copy of it to mess with it, here's how to do it.
 First, clone the repository
-		git clone https://github.com/roaringsheep/dictateMe/
+```
+git clone https://github.com/roaringsheep/dictateMe/
+```
 Then run
-		npm install && bower install
+```
+npm install && bower install
+```
 Then running
-		grunt serve
-will run it on localhost:9000
+```
+grunt serve
+```
+will run the instance of Dictate Me on localhost:9000
 
 ### Issues and Contribution ###
 You found bugs that you'd like to let me know? Please submit it on issue section.

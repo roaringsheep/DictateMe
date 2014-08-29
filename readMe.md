@@ -1,8 +1,6 @@
 #Dictate Me#
-Make the computer dictate music for you, not the other way around.
 
-###Overview###
-Have you ever had an earworm, that catchy phrase of music that would never disappear from your head? What is worse is that many people have a hard time accuratly recreating what's in their head by singing or writing it down, especially without the support of a reference pitch to give them the right starting place. Dictate Me is built to lessen the pain of dealing with such earworm by bringing them out into the existence by musically dictating your earworms. It assumes that the music that gets stuck in most people's brain uses western music notation, but it also attempts to supply some useful information for music that is not by plotting the frequency of the live input. 
+Have you ever had an earworm, that catchy phrase of music that would never disappear from your head? What is worse is that many people have a hard time accuratly recreating what's in their head by singing or writing it down, especially without the support of a reference pitch to give them the right starting place. Dictate Me is built to lessen the pain of dealing with such earworm by bringing them out into the existence by musically dictating your earworms. It assumes that the music that gets stuck in most people's brain uses western music notation, but it also attempts to supply some useful information for non western music by plotting the frequency of the live input. 
 
 ###Basic Usage###
 It is currently alive [here](https://dictateme.herokuapp.com).

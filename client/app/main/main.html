@@ -15,11 +15,11 @@
           <form class="form-inline center-block">
             <div class="form-group form-group-sm">
               <div class="btn-group" ng-controller="RecorderCtrl as recorder">
-                <button ng-disabled="!everythingOK" ng-hide="recording" id="recorderStart" ng-click="start()" class="btn btn-success">Start</button>
+                <a ng-disabled="!everythingOK" ng-hide="recording" id="recorderStart" ng-click="start()" class="btn btn-danger">REC</a>
                 <button ng-hide="!recording" id="recorderStop" ng-click="stop()" class="btn btn-danger">Stop</button>
               </div>
               <div class="form-group" ng-controller="EngravemusicCtrl">
-                <button ng-disabled="!everythingOK" id="musicPlayBack" ng-click="playNotes()" class="btn btn-primary">Play Back</button>
+                <button ng-disabled="!everythingOK" id="musicPlayBack" ng-click="playNotes()" class="btn btn-primary">Play</button>
                 <input ng-show="editOn" ng-model="tones" id="editInput" placeholder="ex) C#4,D#4,C#4,Gb4,F4" ng-disabled="!everythingOK" type="text" class="form-control">
                 <button ng-disabled="!everythingOK" id="musicEdit" ng-click="edit()" class="btn btn-warning">Edit</button>
               </div>
@@ -48,7 +48,6 @@
     </div>
   </div>
   <!--Container-->
-
 
   <footer class="footer">
     <div class="container">

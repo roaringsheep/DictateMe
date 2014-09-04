@@ -1,20 +1,78 @@
 <div class="navbar navbar-inverse navbar-static-top" ng-controller="NavbarCtrl">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">Dictate Me</a>
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">Dictate Me</a>
+        </div>
+        <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="" data-toggle="modal" data-target="#how-to">How To</a>
+                </li>
+                <li><a data-toggle="modal" data-target="#about" href="">About</a>
+                </li>
+                <li><a href="/faq">FAQ</a>
+                </li>
+                <li><a href="http://github.com/roaringsheep/dictateMe" target='_blank'>Find Me on Github</a></li>
+            </ul>
+        </div>
     </div>
-    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-          <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-      </ul>
+    <!-- Modal -->
+</div>
+<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="aboutLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="aboutLabel">About</h4>
+            </div>
+            <div class="modal-body">
+                Have you ever had an earworm, that catchy phrase of music that would never disappear from your head? Dictate Me is built to lessen the pain of dealing with such earworms by bringing them out into the existence by musically dictating them.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="how-to" tabindex="-1" role="dialog" aria-labelledby="how-toLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="how-toLabel">How To Use</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Buttons</h4>
+                <ul>
+                    <li>Rec: The app will start listening to you. Sing away! Play: Play the notes on the staff.</li>
+                    <li>Edit: Edit the notes on the staff. Each note has two mandatory parts(Note name and octave number) and one optional part - accidental. For example, first couple notes from happy birthday would be 'C4,D4,C4,F4,E4'.</li>
+                    <li>Clef: Select the clef in the dropdown menu and click apply to change.</li>
+                    <li>Tone: Select the tone from the dropdown menu and click play/stop to play/stop the reference tone.</li>
+                </ul>
+                <h4>Improving the guess</h4>
+                <ul>
+                  <li>Minimize the background noise</li>
+                  <li>Sing or hum, do not whistle</li>
+                  <li>If the app is skipping notes, try singing slower</li>
+                  <li>Keep to reasonable range - notes around middle C works the best.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
